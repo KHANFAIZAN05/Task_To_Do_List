@@ -51,6 +51,7 @@ namespace TodoList.Controllers
             {
                 if (tr.CreateTask(taskList))
                 {
+                    TempData["message"] = "Added";
                     return this.RedirectToAction("Index");
                 }
             }
@@ -80,6 +81,7 @@ namespace TodoList.Controllers
             {
                 if (tr.DeleteTask(Id))
                 {
+                    TempData["message"] = "Deleted";
                     return this.RedirectToAction("Index");
                 }
             }
@@ -119,6 +121,7 @@ namespace TodoList.Controllers
             {
                 if (tr.UpdateTask(taskList))
                 {
+                    TempData["message"] = "Updated";
                     return this.RedirectToAction("Index");
                 }
                 return View(taskList);
