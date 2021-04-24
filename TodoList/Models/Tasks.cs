@@ -18,8 +18,12 @@ namespace TodoList.Controllers
 
         [Required]
         [Display(Name = "Status")]
-        public string TaskStatus { get; set; }
+        public status TaskStatus { get; set; }
 
-        
+    }
+    public enum status
+    {
+        Pending,
+        Done
     }
 }
