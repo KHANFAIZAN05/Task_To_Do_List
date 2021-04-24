@@ -1,0 +1,64 @@
+﻿@model TodoList.Controllers.TaskList
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="container">
+    <div class="container" style="margin-top:50px">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Create New Task</h5>
+                <p class="card-text">Please Enter Details below</p>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.TaskName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.TaskName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TaskName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.TaskStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.TaskStatus, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.TaskStatus, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Save" class="btn btn-sm btn-primary" style="margin-top:10px"/>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            </div>
+            <div class="card-footer">
+                All Rights Reserved , khanfaizan & &copy;2021
+
+            </div>
+
+        </div>
+    </div>
+
+  
+</div>
+
+
+
