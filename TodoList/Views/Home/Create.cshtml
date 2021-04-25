@@ -42,7 +42,7 @@
                                    new SelectListItem {Text = "Pending", Value = "Pending" },
                                    new SelectListItem {Text = "Done", Value = "Done"}
                                    }, "Select",
-                                   new { htmlAttributes = new { @class = "form-control" }}) 
+                                   new { @class = "form-control" }) 
                                     @Html.ValidationMessageFor(model => model.TaskStatus, "", new { @class = "text-danger" })
                                 </div>
                             </div>
